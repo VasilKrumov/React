@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Wrapper } from '../Helpers/Wrapper'
 import { Button } from '../UI/Button'
 import { Card } from '../UI/Card'
 import { ErrorModal } from '../UI/ErrorModal'
@@ -45,7 +46,7 @@ export const AddUser = (props) => {
         setError({ title: '', message: '' })
     }
     return (
-        <>
+        <Wrapper>
             {error.title !== '' && (
                 <ErrorModal title={error.title} message={error.message} onHandleErorr={errorHandler} />
             )}
@@ -58,6 +59,6 @@ export const AddUser = (props) => {
                     <Button type="submit">Add User</Button>
                 </form>
             </Card>
-        </>
+        </Wrapper>
     )
 }
