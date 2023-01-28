@@ -1,10 +1,9 @@
-import React from 'react'
 import { CartIcon } from '../Cart/CartIcon'
 import classes from './HeaderCardButton.module.css'
 
-export const HeaderCardButton = () => {
+export const HeaderCardButton = ({ onClick }) => {
     return (
-        <button className={classes.button}>
+        <button className={classes.button} onClick={onClick}>
             <span className={classes.icon}>
                 <CartIcon />
             </span>

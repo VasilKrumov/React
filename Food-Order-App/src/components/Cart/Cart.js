@@ -1,7 +1,7 @@
-import React from 'react'
+import { Modal } from '../UI/Modal'
 import classes from './Cart.module.css'
 
-export const Cart = () => {
+export const Cart = ({ onCloseCart }) => {
     const cartItems = (
         <ul className={classes['cart-items']}>
             {[{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
@@ -9,17 +9,20 @@ export const Cart = () => {
             ))}
         </ul>
     )
+
     return (
-        <>
+        <Modal onCloseCart={onCloseCart}>
             {cartItems}
-            <div classname={classes.total}>
+            <div className={classes.total}>
                 <span>Total Amount</span>
                 <span>35.62</span>
             </div>
-            <div classname={classes.actions}>
-                <button classname={classes['button--alt']}>Close</button>
-                <button classname={classes.button}>Order</button>
+            <div className={classes.actions}>
+                <button className={classes['button--alt']} onClick={onCloseCart}>
+                    Close
+                </button>
+                <button className={classes.button}>Order</button>
             </div>
-        </>
+        </Modal>
     )
 }
